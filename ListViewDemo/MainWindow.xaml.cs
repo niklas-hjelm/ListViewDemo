@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,50 +28,29 @@ namespace ListViewDemo
 
         public MainWindow()
         {
-            InitializeComponent();
             MainWindowContext = new MainWindowContext();
-
             DataContext = MainWindowContext;
-
             foreach (var product in DataSource.Stock)
             {
-                Products.Items.Add(product);
+                MainWindowContext.Products.Add(product);
             }
+            InitializeComponent();
+
         }
 
-        private void Products_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void AddProduct_Click(object sender, RoutedEventArgs e)
         {
-            if (Products.SelectedItem is Product selectedItem)
-            {
-                MainWindowContext.ProdName = selectedItem.Name;
-                MainWindowContext.ProdPrice = selectedItem.Price.ToString();
-            }
+            MainWindowContext.AddProduct();
         }
 
-        private void UpdateProdBtn_OnClick(object sender, RoutedEventArgs e)
+        private void SaveToFile_Click(object sender, RoutedEventArgs e)
         {
-            if (Products.SelectedItem is Product selectedItem)
-            {
-                //selectedItem.Name = NameText.Text;
-                //selectedItem.Price = double.Parse(PriceText.Text);
+            MainWindowContext.SaveToFile();
+        }
 
-                var selectedProduct = DataSource.Stock.FirstOrDefault(p => p.Name == selectedItem.Name);
-
-                if (selectedProduct is null)
-                {
-                    return;
-                }
-
-                selectedProduct.Name = NameText.Text;
-                selectedProduct.Price = double.Parse(PriceText.Text);
-
-                Products.Items.Clear();
-
-                foreach (var product in DataSource.Stock)
-                {
-                    Products.Items.Add(product);
-                }
-            }
+        private void LoadFromFile_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindowContext.LoadFromFile();
         }
     }
 }

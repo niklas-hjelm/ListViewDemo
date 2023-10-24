@@ -16,8 +16,8 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <ListView
-            Name="Products"
-            SelectionChanged="Products_OnSelectionChanged"
+            Name="ProductsView"
+            ItemsSource="{Binding Products, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
             SelectionMode="Single" />
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -32,8 +32,15 @@
             <StackPanel Grid.Row="1" Grid.Column="1">
                 <TextBox Name="NameText" Text="{Binding Path=ProdName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <TextBox Name="PriceText" Text="{Binding Path=ProdPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <Button Name="UpdateProdBtn" Click="UpdateProdBtn_OnClick">
-                    Update Product
+                <Button Name="AddProduct" Click="AddProduct_Click">
+                    Add Product
+                </Button>
+                <Separator Height="20" />
+                <Button Name="SaveToFile" Click="SaveToFile_Click">
+                    Save To File
+                </Button>
+                <Button Name="LoadFromFile" Click="LoadFromFile_Click">
+                    Load From File
                 </Button>
             </StackPanel>
         </Grid>
