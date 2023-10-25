@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListViewDemo", "ListViewDemo\ListViewDemo.csproj", "{4B94BDA9-D281-4E6D-BA78-E8DE338E6B38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListViewDemo", "ListViewDemo\ListViewDemo.csproj", "{4B94BDA9-D281-4E6D-BA78-E8DE338E6B38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDataAccess", "MovieDataAccess\MovieDataAccess.csproj", "{5B797F8C-D0E8-4CD6-9E32-8C814CF5B8A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopDataAccess", "MovieDataAccess\ShopDataAccess.csproj", "{5B797F8C-D0E8-4CD6-9E32-8C814CF5B8A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

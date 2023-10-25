@@ -25,7 +25,7 @@ namespace ListViewDemo
         public DataSource DataSource { get; set; } = new DataSource();
 
         public MainWindowContext MainWindowContext { get; set; }
-
+        
         public MainWindow()
         {
             MainWindowContext = new MainWindowContext();
@@ -35,7 +35,6 @@ namespace ListViewDemo
                 MainWindowContext.Products.Add(product);
             }
             InitializeComponent();
-
         }
 
         private void AddProduct_Click(object sender, RoutedEventArgs e)

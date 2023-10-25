@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MovieDataAccess\MovieDataAccess.csproj" />
+    <ProjectReference Include="..\MovieDataAccess\ShopDataAccess.csproj" />
   </ItemGroup>
 
 </Project>
